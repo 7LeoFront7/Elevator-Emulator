@@ -1,10 +1,13 @@
 <script setup>
-const props = defineProps(['floor'])
+const props = defineProps({
+  clickOnBtnFloor: Function,
+  floor: String
+})
 </script>
 
 <template>
   <div class="floor">
-    <button class="btn-floor">o</button>
+    <button :id=props.floor @click='clickOnBtnFloor' class="btn-floor">o</button>
     <span>| {{ props.floor }}</span>
   </div>
 </template>
